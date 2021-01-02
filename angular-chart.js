@@ -329,12 +329,11 @@
         labels: labels,
         datasets: [{
           data: data,
-          backgroundColor: colors.map(function (color) {
-            return color.pointBackgroundColor;
-          }),
-          hoverBackgroundColor: colors.map(function (color) {
-            return color.backgroundColor;
-          })
+          // red
+          borderColor: 'rgb(255, 99, 132)',
+          fill: false,
+          pointRadius: 0.1,
+          cubicInterpolationMode: 'monotone',
         }]
       };
       if (datasetOverride) {
