@@ -1,12 +1,3 @@
-/*!
- * angular-chart.js - An angular.js wrapper for Chart.js
- * http://jtblin.github.io/angular-chart.js/
- * Version: 1.1.1
- *
- * Copyright 2016 Jerome Touffe-Blin
- * Released under the BSD-2-Clause license
- * https://github.com/jtblin/angular-chart.js/blob/master/LICENSE
- */
 (function (factory) {
   'use strict';
   if (typeof exports === 'object') {
@@ -338,12 +329,11 @@
         labels: labels,
         datasets: [{
           data: data,
-          backgroundColor: colors.map(function (color) {
-            return color.pointBackgroundColor;
-          }),
-          hoverBackgroundColor: colors.map(function (color) {
-            return color.backgroundColor;
-          })
+          // red
+          borderColor: 'rgb(255, 99, 132)',
+          fill: false,
+          pointRadius: 0.1,
+          cubicInterpolationMode: 'monotone',
         }]
       };
       if (datasetOverride) {
