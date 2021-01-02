@@ -9,6 +9,7 @@
   },
   "scripts": {
     "codeclimate": "./node_modules/codeclimate-test-reporter/bin/codeclimate.js < coverage/lcov.info",
+    "build": "./node_modules/.bin/terser --compress --mangle --source-map \"url='angular-chart.min.js.map'\" -o dist/angular-chart.min.js -- angular-chart.js",
     "docker": "npm run docker-build && npm run docker-test",
     "docker-build": "docker build -t angular-chart.js .",
     "docker-test": "docker run --rm -i -v $(pwd)/coverage/:/src/coverage/ -v $(pwd)/test/:/src/test/ -v $(pwd)/angular-chart.js:/src/angular-chart.js angular-chart.js",
@@ -21,6 +22,7 @@
   },
   "license": "BSD-2-Clause",
   "devDependencies": {
+    "terser": "5.5.1",
     "Rainbow": "git+https://github.com/ccampbell/rainbow.git",
     "angular-bootstrap": "^0.12.2",
     "angular-mocks": "^1.5.7",
